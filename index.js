@@ -7,7 +7,7 @@ var through = require('through2');
 /**
  * AEM Component Utility
  * @desc Provides Scafolding For New Components
- * node -e 'require("./index").util.makeComponent("content", "infinite-scroll", "./")'
+ * node -e 'require("./index").util.makeComponent(opts)'
  */
 var fs = require('fs');
 
@@ -18,16 +18,17 @@ let types = {
 };
 
 var util = {
-    scafoldComponent: function(type, name, dest){
+    scafoldComponent: function(opts){
 
-        if(!type || !name || !dest){
+        if(!opts.project || !opts.type || !opts.name || !opts.dest){
             throw new Error('Cannot generate component without required args');
         }
-        var fname = name.replace(/\s+/g, '-').toLowerCase();
-        var src,
-            dest = dest + fname;
 
-        switch(type.toLowerCase()){
+        var fproject = opts.project.replace(/\s+/g, '-').toLowerCase();
+        var fname = opts.name.replace(/\s+/g, '-').toLowerCase();
+        var src, dest = opts.dest + fname;
+
+        switch(opts.type.toLowerCase()){
             case types.CONTENT:
                 src = __dirname + '/templates/content/';
                 break;
@@ -40,7 +41,7 @@ var util = {
             default:;
         }
 
-        var options = {
+        var config = {
             overwrite: true,
             expand: true,
             dot: true,
@@ -58,14 +59,14 @@ var util = {
             transform: function(src, dest, stats) {
                 if (path.extname(src) !== '.xml') { return null; }
                 return through(function(chunk, enc, done)  {
-                    var output = chunk.toString().replace(/%fname/g, fname);
+                    var output = chunk.toString().replace(/%fname/g, fname).replace(/%fproject/g, fproject);
                     done(null, output);
                 });
             }
         };
 
         try{
-            copy(src, dest, options)
+            copy(src, dest, config)
                 .on(copy.events.COPY_FILE_START, function(copyOperation) {
                     console.info('Copying file ' + copyOperation.src + '...');
                 })
