@@ -1,24 +1,37 @@
 "use strict";
 
-var copy = require('recursive-copy');
-var path = require('path');
+/**
+ *  AEM Component Utility
+ *
+ * @author Drew Robinson (hello@drewrobinson.com)
+ * @version 0.0.1
+ * @desc Module provides scaffolding for AEM content, structure and navigation components.
+ *
+ * CL: node -e 'require("./index").util.makeComponent(opts)'
+ */
+
+var copy    = require('recursive-copy');
+var path    = require('path');
 var through = require('through2');
+var fs      = require('fs');
 
 /**
- * AEM Component Utility
- * @desc Provides Scafolding For New Components
- * node -e 'require("./index").util.makeComponent(opts)'
+ * Component Types
+ * @type {{CONTENT: string, CONTAINER: string, NAVIGATION: string}}
  */
-var fs = require('fs');
-
 let types = {
     CONTENT: 'content',
     CONTAINER: 'container',
     NAVIGATION: 'navigation'
 };
 
+/**
+ * Util
+ * @type {{scaffoldComponent: util.scaffoldComponent}}
+ * @TODO add support for container and navigation components
+ */
 var util = {
-    scafoldComponent: function(opts){
+    scaffoldComponent: function(opts){
 
         if(!opts.project || !opts.type || !opts.name || !opts.dest){
             throw new Error('Cannot generate component without required args');
