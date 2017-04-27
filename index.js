@@ -7,7 +7,7 @@
  * @version 0.0.1
  * @desc Module provides scaffolding for AEM content, structure and navigation components.
  *
- * CL: node -e 'require("./index").util.makeComponent(opts)'
+ * CL: node -e 'require("./index").util.scaffoldComponent(opts)'
  */
 
 var copy    = require('recursive-copy');
