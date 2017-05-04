@@ -1,9 +1,9 @@
 # aem-component-util
-Node module for scaffolding AEM Components (!important - this project is currently in development and not ready for production use)
+Node module for scaffolding AEM Components (not ready for production use)
 
 Example folder
     - minimum package.json
-    - demo gulp.js file with config and helper methods including a scaffold into your project
+    - gulp.js file contains config and helper methods to add scaffolding components to your project
 
 @TODO
     - Add tests
