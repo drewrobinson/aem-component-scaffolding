@@ -3,7 +3,7 @@
 /**
  *  Automate UXE AEM Dev Process
  *
- * @author Drew Robinson (drobinso@adobe.com)
+ * @author Drew Robinson (hello@drewrobinson.com)
  * @version 0.0.1
  * @desc Task runner to help improve front-end dev process within AEM. Scaffold components, tests, import changes to CRX.
  *
