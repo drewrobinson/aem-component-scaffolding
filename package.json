@@ -12,7 +12,7 @@
     "Utility"
   ],
   "author": "Drew Robinson <hello@drewrobinson.com>",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "recursive-copy": "^2.0.6",
     "through2": "^2.0.3"
