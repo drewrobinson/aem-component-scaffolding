@@ -10,11 +10,11 @@ Getting started:
 5. The watch command will observe the new component has been added to your filesystem and automatically import it into CRX.
 
 Example folder
-    - minimum package.json
-    - gulp.js file contains config and helper methods to add scaffolding components to your project
+- minimum package.json
+- gulp.js file contains config and helper methods to add scaffolding components to your project
 
 
 
 @TODO
-    - Add tests
-    - Add support for structure and navigation components
+- Add tests
+- Add support for structure and navigation components
