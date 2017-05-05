@@ -1,6 +1,6 @@
 {
   "name": "aem-component-scaffolding",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node - Gulp utility for creating components in AEM",
   "main": "index.js",
   "scripts": {
