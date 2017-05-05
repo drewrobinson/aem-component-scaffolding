@@ -1,6 +1,6 @@
 # aem-component-scaffolding
 
-Node module for scaffolding AEM Components (not ready for production use)
+Node module for scaffolding AEM Components (Note: not ready for production use)
 
 Example folder
 
