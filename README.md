@@ -11,7 +11,7 @@ Getting started:
 
 Example folder
 - minimum package.json
-- gulp.js file contains config and helper methods to add scaffolding components to your project
+- gulpfile.js file contains config and helper methods to add scaffolding components to your project
 
 
 
