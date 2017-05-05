@@ -1,7 +1,7 @@
 {
   "name": "AEM-Accelerator",
   "version": "0.0.1",
-  "description": "AEM Accelerator UXE Dev Process",
+  "description": "AEM Accelerator Dev Process",
   "main": "Gulpfile.js",
   "author": "Drew Robinson",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "gulp-util": "^3.0.8"
   },
   "dependencies": {
-    "aem-component-util": "file:///Users/drobinso/_Development/aem-component-util/aem-component-util-1.0.0.tgz",
+    "aem-component-util": "^1.0.0",
     "sling2jcr": "^1.0.2"
   }
 }
