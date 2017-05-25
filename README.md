@@ -13,6 +13,8 @@
    --componentGroup<br/>
    --category<br/>
 
+**How it Works:**
+[Demo Video](https://screencast.com/t/inNoh72O9O)
 
 **Getting Started:**
 <br/><br/>
@@ -48,6 +50,6 @@ Password - The admin password to your local AEM instance
 <br/>
 The sync argument will watch the filesystem for changes during the component scaffolding process and import changes into CRX.<br/>
 ```scaffold-component --type content --title my-component --sync```
-<br/>
+<br/><br/>
 
 Copyright (c) 2017, Andrew Robinson &lt;hello@drewrobinson.com&gt;<br/>
