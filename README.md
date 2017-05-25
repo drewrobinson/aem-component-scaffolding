@@ -15,7 +15,9 @@
 
 
 **Getting Started:**
-<br/>
+<br/><br/>
+Requires:   Node v7.8.0 | NPM 4.2.0
+
 Install with npm:<br/>
 ```npm install --save-dev```<br/><br/>
 Generate aem-component-config.json<br/>
