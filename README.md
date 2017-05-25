@@ -1,6 +1,6 @@
 # aem-component-scaffolding
 
-**NPM CLI for scaffolding AEM Components (In Development)**
+**Node CLI for scaffolding AEM Components (In Development)**
 
 &lt;command&gt; is one of: init, help<br/>
   required args:<br/>
