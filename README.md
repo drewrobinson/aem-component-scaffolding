@@ -1,20 +1,40 @@
 # aem-component-scaffolding
 
-Node module for scaffolding AEM Components (Note: not ready for production use)
+#####NPM CLI for scaffolding AEM Components (In Development)
 
-Getting started:
-1. Copy example/gulpfile.js into your root directory.
-2. Customize the config object with your project directory name.
-3. Run gulp watch to monitor the file system
-4. Run gulp create-component --type content --name MyComponentName
-5. The watch command will observe the new component has been added to your filesystem and automatically import it into CRX.
+&lt;command&gt; is one of: init, help<br/>
+  required args:<br/>
+   --type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e. content, navigation, structure<br/>
+   --title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i.e. my-component
 
-Example folder
-- minimum package.json
-- gulpfile.js file contains config and helper methods to add scaffolding components to your project
+  optional args:<br/>
+   --sync<br/>
+   --slingResourceSuperType<br/>
+   --componentGroup<br/>
+   --category<br/>
 
 
+###Getting Started:<br/>
+Install with npm:<br/>
+```npm install --save-dev```<br/><br/>
+Generate aem-component-config.json<br/>
+```scaffold-component init```<br/><br/>
+Follow the prompts  to generate config file or create your own and place it in the root of your project.<br/>
+```
+{
+	"project": "AEM Rockstars",
+	"directory": "aem-rockstars",
+	"host": "localhost",
+	"port": "4502",
+	"username": "admin",
+	"password": "admin"
+}
+```
+<br/>
 
-@TODO
-- Add tests
-- Add support for structure and navigation components
+###Sync:<br/>
+The sync argument will watch the filesystem for changes during the component scaffolding process and import changes into CRX.<br/>
+```scaffold-component --type content --title my-component --sync```
+<br/>
+
+Copyright (c) 2017, Andrew Robinson<hello@drewrobinson.com><br/>
