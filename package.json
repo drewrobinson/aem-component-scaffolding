@@ -1,6 +1,6 @@
 {
   "name": "aem-component-scaffolding",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Utility for scaffolding AEM components",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,7 +26,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drewrobinson/aem-component-util.git"
+    "url": "git+https://github.com/drewrobinson/aem-component-scaffolding"
   },
   "bugs": {
     "url": "https://github.com/drewrobinson/aem-component-util/issues"
