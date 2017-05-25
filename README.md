@@ -34,6 +34,15 @@ Follow the prompts  to generate config file or create your own and place it in t
 }
 ```
 <br/>
+Desc:<br/>
+Project - The human readable name of your project<br/>
+Directory - The name of the project folder within the /apps directory<br/>
+Host - The url to your local AEM instance<br/>
+Port - The port to your local AEM instance<br/>
+Username - The admin username to your local AEM instance<br/>
+Password - The admin password to your local AEM instance
+<br/><br/>
+
 
 **Sync:**
 <br/>
@@ -41,4 +50,4 @@ The sync argument will watch the filesystem for changes during the component sca
 ```scaffold-component --type content --title my-component --sync```
 <br/>
 
-Copyright (c) 2017, Andrew Robinson<hello@drewrobinson.com><br/>
+Copyright (c) 2017, Andrew Robinson &lt;hello@drewrobinson.com&gt;<br/>
