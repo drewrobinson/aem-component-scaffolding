@@ -16,11 +16,12 @@
 **How it Works:**
 [Demo Video](https://screencast.com/t/inNoh72O9O)
 
+
 **Getting Started:**
 <br/><br/>
 Requires:   Node v7.8.0 | NPM 4.2.0
 
-Install with npm:<br/>
+[Install with npm:](https://www.npmjs.com/package/aem-component-scaffolding)<br/>
 ```npm install --save-dev```<br/><br/>
 Generate aem-component-config.json<br/>
 ```scaffold-component init```<br/><br/>
