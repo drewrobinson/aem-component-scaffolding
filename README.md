@@ -1,6 +1,6 @@
 # aem-component-scaffolding
 
-#####NPM CLI for scaffolding AEM Components (In Development)
+**NPM CLI for scaffolding AEM Components (In Development)**
 
 &lt;command&gt; is one of: init, help<br/>
   required args:<br/>
@@ -14,7 +14,8 @@
    --category<br/>
 
 
-###Getting Started:<br/>
+**Getting Started:**
+<br/>
 Install with npm:<br/>
 ```npm install --save-dev```<br/><br/>
 Generate aem-component-config.json<br/>
@@ -32,7 +33,8 @@ Follow the prompts  to generate config file or create your own and place it in t
 ```
 <br/>
 
-###Sync:<br/>
+**Sync:**
+<br/>
 The sync argument will watch the filesystem for changes during the component scaffolding process and import changes into CRX.<br/>
 ```scaffold-component --type content --title my-component --sync```
 <br/>
