@@ -23,6 +23,7 @@
   "directories": {
     "templates": "templates"
   },
+  "engines" : { "node" : ">=7.8.0" },
   "devDependencies": {},
   "repository": {
     "type": "git",
