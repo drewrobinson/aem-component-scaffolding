@@ -1,10 +1,10 @@
 # aem-component-scaffolding
 
-**Node CLI for scaffolding AEM Components (In Development)**
+**Node CLI for scaffolding AEM Components**
 
 &lt;command&gt; is one of: init, help<br/>
   required args:<br/>
-   --type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e. content, navigation, structure<br/>
+   --type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e. content<br/>
    --title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i.e. my-component
 
   optional args:<br/>

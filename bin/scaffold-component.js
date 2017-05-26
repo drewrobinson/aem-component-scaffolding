@@ -5,7 +5,7 @@
  *
  * @author Drew Robinson (hello@drewrobinson.com)
  * @version 0.0.1
- * @desc Module provides scaffolding for AEM content, structure and navigation components.
+ * @desc Module provides scaffolding for AEM content components.
  *
  */
 
@@ -44,9 +44,7 @@ let __slingLib = null;
  * @type {{CONTENT: string, STRUCTURE: string, NAVIGATION: string}}
  */
 const cmpTypes = {
-  CONTENT: 'content',
-  STRUCTURE: 'structure',
-  NAVIGATION: 'navigation'
+  CONTENT: 'content'
 };
 
 /**
@@ -325,14 +323,6 @@ const Scaffolder = (function() {
           templatePath = __parent_path + '/templates/content/';
           destPath =  `${__project_path}/ui.apps/src/main/content/jcr_root/apps/${directory}/components/content/`;
           break;
-        case cmpTypes.STRUCTURE:
-          templatePath = __parent_path + '/templates/container/';
-          destPath =  `${__project_path}/ui.apps/src/main/content/jcr_root/apps/${directory}/components/structure/`;
-          break;
-        case cmpTypes.NAVIGATION:
-          templatePath = __parent_path + '/templates/navigation/';
-          destPath =  `${__project_path}/ui.apps/src/main/content/jcr_root/apps/${directory}/components/navigation/`;
-          break;
         default:;
       }
 
@@ -390,7 +380,7 @@ const Scaffolder = (function() {
           .then(function(results) {
             console.info(results.length + ' file(s) copied');
 
-            //@TODO find better way to close timer
+            //@TODO find better way to close watcher
             // setTimeout(function(){
             //   "use strict";
             //   watcher.close();
@@ -456,7 +446,7 @@ const Scaffolder = (function() {
      */
     function help() {
       console.log('<command> is one of: init, help');
-      console.log('  required args: \n   --type     options:content, navigation, structure \n   --title     i.e. my-component');
+      console.log('  required args: \n   --type     options:content \n   --title     i.e. my-component');
       console.log('  optional args: \n   --slingResourceSuperType \n   --componentGroup \n   --category \n  --sync');
     }
 
@@ -490,6 +480,3 @@ if (args.includes('init')) {
 } else {
   aemScaffolder.help();
 }
-
-
-//scaffold-component --type content --title carousel --slingResourceSuperType aem-foundations/components/page/base --componentGroup aem-foundations --category --base --sync
