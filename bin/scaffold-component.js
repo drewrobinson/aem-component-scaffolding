@@ -4,7 +4,7 @@
  *  Scaffolder - AEM Component Scaffolding Utility
  *
  * @author Drew Robinson (hello@drewrobinson.com)
- * @version 0.0.1
+ * @version 1.0.8
  * @desc Module provides scaffolding for AEM content components.
  *
  */
