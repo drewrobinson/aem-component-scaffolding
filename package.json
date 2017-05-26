@@ -1,6 +1,6 @@
 {
   "name": "aem-component-scaffolding",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Utility for scaffolding AEM components",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
     "Scaffolding"
   ],
   "author": "Drew Robinson <hello@drewrobinson.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "prompt": "^1.0.0",
     "recursive-copy": "^2.0.6",
