@@ -5,9 +5,10 @@
 &lt;command&gt; is one of: init, help<br/>
   required args:<br/>
    --type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e. content<br/>
-   --title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i.e. my-component
+   --name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e. my-component<br/>
 
   optional args:<br/>
+   --title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i.e. My Component<br/>
    --sync<br/>
    --slingResourceSuperType<br/>
    --componentGroup<br/>
