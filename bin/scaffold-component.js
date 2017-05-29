@@ -18,6 +18,9 @@ const util      = require('util');
 const prompt    = require('prompt');
 const sling2jcr = require("sling2jcr");
 const chokidar  = require('chokidar');
+const program   = require('commander');
+
+const CONFIG_FILE = '/aem-scaffolding-config.json';
 
 //Set Prompt Props
 prompt.message = 'Please enter the ';
@@ -26,14 +29,22 @@ prompt.delimiter = '';
 //Set Env Args
 const args = process.argv;
 
+program
+  .version('1.0.8')
+  .option('-T, --type [type]', "Required: Specify the type of component", /^(content|page)$/i, 'content')
+  .option('-n, --name [name]', "Required: Specify the name of the new component")
+  .option('-t, --title [title]', "Specify the title of the new component; if not specified, the name will be used")
+  .option('-g, --componentGroup [group]', "Specify the desired component group")
+  .option('-s, --superType [superType]', "Specify the slingResourceSuperType for the component")
+  .option('-c, --category [category]', "Specify the clientLib category for this component")
+  .option('-S, --sync [sync]', "Enable syncing with the AEM instance declared in the config file")
+  .parse(process.argv);
+
 let __path = __dirname;
     __path = __path.split('/');
     __parent_path = __path.splice(0, __path.length-1);
     __parent_path = __parent_path.join('/');
-
-    __project_path = __parent_path.split('/');
-    __project_path = __project_path.splice(0, __project_path.length-2);
-    __project_path = __project_path.join('/');
+    __project_path = process.cwd();
 
 let __config = {};
 
@@ -216,8 +227,8 @@ const Scaffolder = (function() {
      * @param config
      */
     function writeConfig(config) {
-      fs.writeFileSync(__project_path + '/aem-scaffolding-config.json', JSON.stringify(config, null, '\t'), 'utf-8');
-      console.log('All set:  aem-component-scaffolding-config.json has been created');
+      fs.writeFileSync(__project_path + CONFIG_FILE, JSON.stringify(config, null, '\t'), 'utf-8');
+      console.log('All set:  aem-component-scaffolding-config.json has been created at ' + __project_path + CONFIG_FILE);
     }
 
     /**
@@ -226,7 +237,7 @@ const Scaffolder = (function() {
      */
     async function readConfig() {
       let config = new Promise(function(resolve, reject) {
-        fs.readFile("./aem-scaffolding-config.json", "utf8", function(err, data) {
+        fs.readFile(__project_path + CONFIG_FILE, "utf8", function(err, data) {
           if (!err) {
             resolve(data);
           } else {
@@ -305,13 +316,14 @@ const Scaffolder = (function() {
      * @param category
      * @param sync
      */
-    function scaffoldComponent(project, directory, type, title, group, superType, category, sync) {
+    function scaffoldComponent(project, directory, type, name, title, group, superType, category, sync) {
       if(!project || !directory || !type || !title){
         throw new Error('Cannot get component template without required args');
       }
 
       let projectName = project.replace(/\s+/g, '-').toLowerCase();
-      let componentTitle = title.replace(/\s+/g, '-').toLowerCase();
+      let componentName = title.replace(/\s+/g, '-').toLowerCase();
+      let componentTitle = title || componentName;
       let componentGroup = group || '';
       let resourceSuperType = superType || '';
       let componentCategory = category || 'components';
@@ -326,7 +338,7 @@ const Scaffolder = (function() {
         default:;
       }
 
-      destPath = destPath + '/' + componentTitle;
+      destPath = destPath + '/' + componentName;
 
       const copyConfig = {
         overwrite: true,
@@ -340,7 +352,7 @@ const Scaffolder = (function() {
 
         rename: function(filePath) {
           if(filePath === 'component.html'){
-            filePath = filePath.replace(/component/g, componentTitle);
+            filePath = filePath.replace(/component/g, componentName);
           }
           return filePath;
         },
@@ -407,7 +419,7 @@ const Scaffolder = (function() {
       configPromise.then(function(config) {
         writeConfig(config);
       }).catch(function(reason) {
-        console.log('Blasted.. Something has gone awry', reason);
+        console.log('Blasted.. Something has gone awry during the init', reason);
       });
     }
 
@@ -416,12 +428,14 @@ const Scaffolder = (function() {
      */
     function scaffold() {
       let configPromise = readConfig();
-      let type = (args.indexOf('--type') > -1) ? args[ args.indexOf('--type') + 1] : null;
-      let title = (args.indexOf('--title') > -1) ? args[ args.indexOf('--title') + 1] : null;
-      let group = (args.indexOf('--componentGroup') > -1) ? args[ args.indexOf('--componentGroup') + 1] : null;
-      let superType = (args.indexOf('--slingResourceSuperType') > -1) ? args[ args.indexOf('--slingResourceSuperType') + 1] : null;
-      let category = (args.indexOf('--category') > -1) ? args[ args.indexOf('--category') + 1] : null;
-      let sync =  (args.indexOf('--sync') > -1) ? true : null;
+
+      let type = program.type ? program.type : null;
+      let name = program.name ? program.name : null;
+      let title = program.title ? program.title : null;
+      let group = program.componentGroup ? program.componentGroup : null;
+      let superType = program.superType ? program.superType : null;
+      let category = program.category ? program.category : null;
+      let sync = program.sync ? true : null;
 
       configPromise.then(function(val) {
         __config = JSON.parse(val);
@@ -431,11 +445,10 @@ const Scaffolder = (function() {
         }
 
         if (__config) {
-          scaffoldComponent(__config.project, __config.directory, type, title, group, superType, category, sync);
+          scaffoldComponent(__config.project, __config.directory, type, name, title, group, superType, category, sync);
         } else {
           console.log('Hmmm... looks like you haven\'t created a config file yet. Run: scaffold-component init');
         }
-
       }).catch(function(reason) {
         console.log('Blasted.. Something has gone awry', reason);
       })
@@ -475,7 +488,7 @@ var aemScaffolder = Scaffolder.getInstance();
 //Invoke Scaffolder Method Based on Args
 if (args.includes('init')) {
   aemScaffolder.init();
-} else if (args.indexOf('--type') > -1) {
+} else if (program.type) {
   aemScaffolder.scaffold();
 } else {
   aemScaffolder.help();
