@@ -3,16 +3,18 @@
 **Node CLI for scaffolding AEM Components**
 
 &lt;command&gt; is one of: init, help<br/>
-  required args:<br/>
-   --type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e. content<br/>
-   --name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.e. my-component<br/>
 
-  optional args:<br/>
-   --title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i.e. My Component<br/>
-   --sync<br/>
-   --slingResourceSuperType<br/>
-   --componentGroup<br/>
-   --category<br/>
+The below arguments are available when creating a new component:
+
+| **Argument** | **Required** | **Example** |
+|---|---|---|
+| --type | Yes | content |
+| --name | Yes | my-component |
+| --title | No | My Component |
+| --superType | No | core/components/content/title/v1/title |
+| --componentGroup | No | My Project Components |
+| --category | No | my.clientlibs |
+| --sync | No | true | 
 
 **How it Works:**
 [Demo Video](https://screencast.com/t/inNoh72O9O)
