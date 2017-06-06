@@ -52,11 +52,16 @@ const aux = {
      * @desc Recursive traverse directory to build heterogeneous list of children
      */
     crawl: function(dir){
+
+        if (!(dir.charAt(dir.length - 1) === "/")) {
+            dir += "/";
+        }
+
         return aux.flatten(fs.readdirSync(dir).map(function(childNode){
-            if(fs.statSync(dir+childNode).isFile()){
+            if(fs.statSync(dir + childNode).isFile()){
                 return dir + childNode;
-            }else if(fs.statSync(dir+childNode+'/').isDirectory()){
-                return aux.crawl(dir+childNode+'/');
+            }else if(fs.statSync(dir + childNode + '/').isDirectory()){
+                return aux.crawl(dir + childNode + '/');
             }
         }));
     },
