@@ -1,3 +1,5 @@
+var fs = require('fs');
+
 /**
  * Aux Methods
  * @type {{debounce: aux.debounce, flatten: aux.flatten, crawl: aux.crawl, sort: aux.sort, prioritize: aux.prioritize}}
