@@ -1,6 +1,10 @@
 node_modules
-.idea
 *.tgz
+
+# IDE Files #
+###################
+.idea
+*.iml
 
 # Compiled source #
 ###################
