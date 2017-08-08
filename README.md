@@ -25,6 +25,14 @@ The below arguments are available when creating a new component:
 Requires:   Node v7.8.0 | NPM 4.2.0
 
 [Install with npm:](https://www.npmjs.com/package/aem-component-scaffolding)<br/>
+
+Add aem-component-scaffolder as dependency to your package.json file:
+```
+"dependencies": {
+    "aem-component-scaffolding": "^1.0.0"
+}
+  ```
+
 ```npm install --save-dev```<br/><br/>
 Generate aem-component-config.json<br/>
 ```scaffold-component init```<br/><br/>
