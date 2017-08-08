@@ -174,6 +174,7 @@ const Scaffolder = (function() {
      * @desc Asynchronously process file import queue
      */
     function crxImport(event, path){
+      var watcher = this;
 
       function sync(file) {
         if(!__slingLib){
@@ -184,6 +185,9 @@ const Scaffolder = (function() {
           console.log('Importing content....  ' + f);
           if (filesToSync.length > 0) {
             processQueue();
+          }else{
+            console.log('import complete');
+            watcher.close();
           }
         });
       }
@@ -279,7 +283,7 @@ const Scaffolder = (function() {
       let watcher  = chokidar.watch(destPath, {persistent: true});
 
       if(sync){
-        watcher.on('all', crxImport);
+        watcher.on('all', crxImport.bind(watcher));//bind to watcher to allow watcher to be closed from within crxImport
       }
 
       try{
