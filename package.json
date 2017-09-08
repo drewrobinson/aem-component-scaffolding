@@ -41,6 +41,6 @@
   },
   "homepage": "https://github.com/drewrobinson/aem-component-util#readme",
   "bin": {
-    "scaffold-component": "bin/scaffold-component.js"
+    "scaffold": "bin/scaffold-component.js"
   }
 }

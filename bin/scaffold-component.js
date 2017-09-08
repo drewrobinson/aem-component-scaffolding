@@ -19,7 +19,7 @@ const prompt    = require('prompt');
 const sling2jcr = require("sling2jcr");
 const chokidar  = require('chokidar');
 const program   = require('commander');
-const aux       = require('./aux.js');
+const aux       = require('../aux.js');
 
 const CONFIG_FILE = '/aem-scaffolding-config.json';
 
