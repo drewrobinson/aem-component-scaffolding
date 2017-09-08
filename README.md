@@ -22,7 +22,7 @@ The below arguments are available when creating a new component:
 
 **Getting Started:**
 <br/><br/>
-Requires:   Node v7.8.0 | NPM 4.2.0
+Requires:   Node ~v7.8.0 | NPM ~4.2.0
 
 [Install with npm:](https://www.npmjs.com/package/aem-component-scaffolding)<br/>
 
@@ -35,7 +35,12 @@ Add aem-component-scaffolder as dependency to your package.json file:
 
 ```npm install --save-dev```<br/><br/>
 Generate aem-component-config.json<br/>
-```scaffold-component init```<br/><br/>
+```scaffold init```<br/><br/>
+
+Make scaffold command available to your system:<br>
+```
+cd node_modules/aem-component-scaffolding && npm link && cd ..
+```
 Follow the prompts  to generate config file or create your own and place it in the root of your project.<br/>
 ```
 {
@@ -61,7 +66,7 @@ Password - The admin password to your local AEM instance
 **Sync:**
 <br/>
 The sync argument will watch the filesystem for changes during the component scaffolding process and import changes into CRX.<br/>
-```scaffold-component --type content --title my-component --sync```
+```scaffold --type content --title my-component --sync```
 <br/><br/>
 
 Copyright (c) 2017, Andrew Robinson &lt;hello@drewrobinson.com&gt;<br/>
