@@ -37,7 +37,7 @@ cd node_modules/aem-component-scaffolding && npm link && cd ..
 ```
 
 
-**5.**  Generate config file:<br/>
+**5.**  Generate config file:
 ```scaffold init```<br/><br/>
 
 
