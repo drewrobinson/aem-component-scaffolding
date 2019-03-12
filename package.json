@@ -1,6 +1,6 @@
 {
   "name": "aem-component-scaffolding",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Utility for scaffolding AEM components",
   "scripts": {
     "test": "mocha"
