@@ -2,7 +2,6 @@
 
 **Node CLI for scaffolding AEM Components**
 
-&lt;command&gt; is one of: init, help<br/>
 
 The below arguments are available when creating a new component:
 
@@ -56,7 +55,7 @@ Follow the prompts  to generate config file or create your own and place it in t
 <br/>
 
 
-**Configuration Properties:**  
+**Configuration Properties:**
 Project - The human readable name of your project<br/>
 Directory - The name of the project folder within the /apps directory<br/>
 Host - The url to your local AEM instance<br/>
