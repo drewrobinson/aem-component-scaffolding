@@ -1,6 +1,6 @@
 {
   "name": "aem-component-scaffolding",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Utility for scaffolding AEM components",
   "scripts": {},
   "keywords": [
@@ -37,6 +37,6 @@
   },
   "homepage": "https://github.com/drewrobinson/aem-component-util#readme",
   "bin": {
-    "scaffold": "bin/scaffold-component.js"
+    "scaffold": "bin/main.js"
   }
 }
