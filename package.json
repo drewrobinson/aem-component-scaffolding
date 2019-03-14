@@ -1,12 +1,12 @@
 {
   "name": "aem-component-scaffolding",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Utility for scaffolding AEM components",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [
     "AEM",
     "AEM 6.3",
+    "AEM 6.4",
     "Component",
     "Utility",
     "Scaffolding"

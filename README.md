@@ -2,6 +2,8 @@
 
 **Node CLI for scaffolding AEM Components**
 
+**[IMPORTANT] The package is under development**
+
 
 The below arguments are available when creating a new component:
 
@@ -22,20 +24,15 @@ The below arguments are available when creating a new component:
 **2.**  Add aem-component-scaffolder as dependency to your package.json file:
 ```
 "devDependencies": {
-    "aem-component-scaffolding": "^1.0.16"
+    "aem-component-scaffolding": "^1.0.18"
 }
   ```
 
 **3.**  Run Install:
 ```npm install --save-dev```<br/><br/>
 
-**4.**  Link scaffold command:<br>
-```
-cd node_modules/aem-component-scaffolding && npm link && cd ../..
-```
 
-
-**5.**  Generate config file:
+**4.**  Generate config file:
 ```scaffold init```<br/><br/>
 
 
@@ -66,7 +63,7 @@ Password - The admin password to your local AEM instance
 **Options:**
 <br/>
 The sync argument will watch the filesystem for changes during the component scaffolding process and import changes into CRX.<br/>
-```scaffold --type content --title my-component --sync```
+```scaffold --type content --title my-component ```
 <br/><br/>
 
-Copyright (c) 2017, Andrew Robinson &lt;hello@drewrobinson.com&gt;<br/>
+Copyright (c) 2019, Andrew Robinson &lt;hello@drewrobinson.com&gt;<br/>
