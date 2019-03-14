@@ -1,8 +1,11 @@
 {
   "name": "aem-component-scaffolding",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Utility for scaffolding AEM components",
-  "scripts": {},
+  "scripts": {
+    "link-scaffolder":"./bin/link.js",
+    "postinstall":"npm run link-scaffolder"
+  },
   "keywords": [
     "AEM",
     "AEM 6.3",

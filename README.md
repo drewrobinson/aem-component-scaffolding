@@ -16,13 +16,13 @@ The below arguments are available when creating a new component:
 
 **Getting Started:**
 <br/><br/>
-**1.**  Requires:   Node ~v7.8.0 | NPM ~4.2.0
+**1.**  Requires:   Node ~v10.15.1 | NPM ~6.4.1
 
 
 **2.**  Add aem-component-scaffolder as dependency to your package.json file:
 ```
-"dependencies": {
-    "aem-component-scaffolding": "^1.0.0"
+"devDependencies": {
+    "aem-component-scaffolding": "^1.0.16"
 }
   ```
 
@@ -31,7 +31,7 @@ The below arguments are available when creating a new component:
 
 **4.**  Link scaffold command:<br>
 ```
-cd node_modules/aem-component-scaffolding && npm link && cd ..
+cd node_modules/aem-component-scaffolding && npm link && cd ../..
 ```
 
 
