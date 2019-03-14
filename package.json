@@ -1,6 +1,6 @@
 {
   "_from": "aem-component-scaffolding",
-  "_id": "aem-component-scaffolding@1.0.2",
+  "_id": "aem-component-scaffolding@1.0.13",
   "_inBundle": false,
   "_integrity": "sha512-I+E1RvB8u37aVBdvtUwq4tnLbKVfONDpb3v5KY2wMsQIFA3ZBO8y10hw6sK2HdiLqljppI1Nf/7Ehpz/RN0sVA==",
   "_location": "/aem-component-scaffolding",
@@ -67,5 +67,5 @@
     "url": "git+https://github.com/drewrobinson/aem-component-scaffolding.git"
   },
   "scripts": {},
-  "version": "1.0.12"
+  "version": "1.0.13"
 }
