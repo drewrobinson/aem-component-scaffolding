@@ -8,12 +8,10 @@ The below arguments are available when creating a new component:
 | **Argument** | **Required** | **Example** |
 |---|---|---|
 | --type | Yes | content |
-| --name | Yes | my-component |
-| --title | No | My Component |
+| --title | Yes | My Component |
 | --superType | No | core/components/content/title/v1/title |
 | --componentGroup | No | My Project Components |
 | --category | No | my.clientlibs |
-| --sync | No | true | 
 
 
 **Getting Started:**
@@ -55,7 +53,7 @@ Follow the prompts  to generate config file or create your own and place it in t
 <br/>
 
 
-**Configuration Properties:**
+**Configuration Properties:**<br/>
 Project - The human readable name of your project<br/>
 Directory - The name of the project folder within the /apps directory<br/>
 Host - The url to your local AEM instance<br/>
